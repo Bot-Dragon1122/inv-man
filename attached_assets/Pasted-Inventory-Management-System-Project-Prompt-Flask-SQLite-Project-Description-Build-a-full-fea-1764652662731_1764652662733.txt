@@ -1,0 +1,218 @@
+Inventory Management System – Project Prompt (Flask + SQLite)
+
+Project Description
+
+Build a full-featured Inventory Management System using Flask, SQLite, HTML/CSS, and optionally JavaScript. The system will allow users to manage products, track stock levels, record transactions, monitor low-stock items, and maintain suppliers. The application will run on Replit and use Flask for backend logic.
+
+
+---
+
+Core Features (MVP)
+
+1. User Authentication
+
+Login and logout system
+
+Only authenticated users can access inventory pages
+
+Admin account for full control
+
+
+2. Product Management (CRUD)
+
+Add new products with fields:
+
+Name
+
+SKU / Product Code
+
+Category
+
+Purchase Price & Selling Price
+
+Quantity
+
+Reorder Level
+
+
+Edit existing product details
+
+Delete products
+
+View all products in a sortable table
+
+
+3. Stock Management
+
+Increase stock when new items are purchased
+
+Decrease stock when items are sold
+
+Automatic quantity updates
+
+Prevent stock from going below zero
+
+
+4. Search & Filters
+
+Search by product name or SKU
+
+Filter by category
+
+Sort products by quantity, name, or price
+
+
+5. Low Stock Alerts
+
+Highlight products with quantity ≤ reorder level
+
+Separate “Low Stock” page/list
+
+Display low-stock count on dashboard
+
+
+
+---
+
+Additional (Optional but Recommended) Features
+
+6. Categories Management
+
+Add, edit, and delete categories
+
+Assign products to categories
+
+Filter view by category
+
+
+7. Supplier Management
+
+Store supplier information:
+
+Name
+
+Contact details
+
+Address
+
+
+Link each product to a supplier
+
+
+8. Transaction History
+
+Store all stock changes as transactions
+
+Each record includes:
+
+Type: "purchase" or "sale"
+
+Quantity
+
+Product
+
+Date & time
+
+
+View purchase and sales logs separately
+
+
+9. Dashboard
+
+Overview cards:
+
+Total products
+
+Total stock quantity
+
+Number of low-stock items
+
+
+Graph showing stock trends (optional)
+
+
+10. Data Export
+
+Export product list to CSV
+
+Export transaction history to CSV
+
+
+11. Role-Based Access (Advanced)
+
+Admin users:
+
+Full access
+
+
+Staff users:
+
+Can only update stock or record sales
+
+Cannot delete products
+
+
+
+
+---
+
+Database Structure (SQLite)
+
+Table: products
+
+Field	Type	Description
+
+id	INTEGER	Primary key
+name	TEXT	Product name
+sku	TEXT	Unique product code
+category	TEXT / FK	Assigned category
+purchase_price	REAL	Cost price
+selling_price	REAL	Selling price
+quantity	INTEGER	Current stock
+reorder_level	INTEGER	Minimum safe stock
+supplier_id	INTEGER	Link to supplier
+
+
+Table: transactions
+
+Field	Type
+
+id	INTEGER
+product_id	INTEGER
+type	TEXT ("purchase"/"sale")
+quantity	INTEGER
+date	DATETIME
+
+
+Table: users (optional)
+
+Field	Type
+
+id	INTEGER
+username	TEXT
+password	TEXT (hashed)
+role	TEXT ("admin"/"staff")
+
+
+
+---
+
+Tech Stack
+
+Flask (Backend)
+
+SQLite (Database)
+
+Jinja2 (Templates)
+
+HTML / CSS / Bootstrap (Frontend)
+
+Replit environment
+
+
+
+---
+
+Outcome
+
+By completing this project, you will have a fully functional web-based inventory system capable of managing products, monitoring stock levels, recording transactions, and displaying important insights.
